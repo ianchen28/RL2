@@ -2,12 +2,13 @@ import numpy as np
 
 
 class BanditMachine(object):
-    def __init__(self, n_arm):
+    def __init__(self, n_arm, r_mean=0):
         self.n_arm = n_arm
-        self.true_reward = np.random.normal(0, 1, size=self.n_arm)
+        self.r_mean = r_mean
+        self.true_reward = np.random.normal(self.r_mean, 1, size=self.n_arm)
 
     def reset(self):
-        self.true_reward = np.random.normal(0, 1, size=self.n_arm)
+        self.true_reward = np.random.normal(self.r_mean, 1, size=self.n_arm)
 
     def get_true_rew(self, action):
         return self.true_reward[action]
