@@ -74,9 +74,12 @@ if __name__ == "__main__":
     agent_0 = EpsilonGreedyAgent(0, ACTION_NUM, c=2)
     agent_0_1 = EpsilonGreedyAgent(0.1, ACTION_NUM)
     # agent_0_01 = EpsilonGreedyAgent(0.01, ACTION_NUM)
-    rewards_0, best_agent_a_0, max_rewards_0 = train(env, agent_0, EPI_LEN, EPI_NUM)
-    rewards_0_1, best_agent_a_0_1, max_rewards_0_1 = train(env, agent_0_1, EPI_LEN, EPI_NUM)
-    # rewards_0_01, best_agent_a_0_01, max_rewards_0_01 = train(env, agent_0_01, EPI_LEN, EPI_NUM)
+    rewards_0, best_agent_a_0, max_rewards_0 = train(
+        env, agent_0, EPI_LEN, EPI_NUM)
+    rewards_0_1, best_agent_a_0_1, max_rewards_0_1 = train(
+        env, agent_0_1, EPI_LEN, EPI_NUM)
+    # rewards_0_01, best_agent_a_0_01, max_rewards_0_01 = train(
+    #     env, agent_0_01, EPI_LEN, EPI_NUM)
 
     # draw
     epis = list(range(EPI_LEN))
